@@ -17,11 +17,11 @@ public class sampleConsumer{
         BasicAWSCredentials awsCreds = new BasicAWSCredentials("aws_access_key_id",
                 "aws_secret_access_key");
         AmazonKinesisClientBuilder clientBuilder = AmazonKinesisClientBuilder.standard();
-        clientBuilder.setRegion("us-east-1"); // 서울 region
+        clientBuilder.setRegion("us-east-1"); // 
         clientBuilder.setCredentials(new AWSStaticCredentialsProvider(awsCreds));
         AmazonKinesis kinesisClient = clientBuilder.build();
 
-        String shardIterator;
+        String shardIterator ="milk-consumer";
         GetShardIteratorRequest getShardIteratorRequest = new GetShardIteratorRequest();
         getShardIteratorRequest.setStreamName(STREAM_NAME);
         getShardIteratorRequest.setShardId("shardId-000000000000");
